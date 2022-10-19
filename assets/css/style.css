@@ -131,6 +131,10 @@ input {
     color: var(--first-color);
 }
 
+.breadcrumb__subtitle span{
+    color: var(--first-color);
+}
+
 /*=============== LAYOUT ===============*/
 .container {
     max-width: 968px;
@@ -560,9 +564,128 @@ input {
     font-size: var(--normal-font-size); 
 }
 
+.filter{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-0-5);
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+
+.filter p{
+    flex: 1;
+}
+
+.filter input{
+    margin-right: var(--mb-0-75);
+    cursor: pointer;
+}
+
+.shop__items{
+    grid-template-columns: repeat(2, 1 fr);
+    gap: 1.6rem;
+}
+
+.shop__content{
+    position:relative;
+    background-color: 2rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    overflow: hidden ;
+}
+
+.shop__img{
+    width: 150px;
+    margin-bottom: var(--mb-1);
+    transition: .3s;
+}
+
+.shop__tag{
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: var(--small-font-size);
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
+.shop__title{
+    font-size: var(--h3-font-fize);
+    font-weight: var(--font-medium);
+}
+
+.shop__subtitle{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.shop__prices{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.shop__price{
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.shop__discount{
+    color: var(--first-color);
+    font-size: var(--smaller-font-size);
+    text-decoration: line-through;
+    font-weight: var(--font-medium);
+}
+
+.shop__button{
+    display: inline-flex;
+    padding: .5rem;
+    border-radius: .25rem .25rem .75rem .25rem;
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+}
+
+.shop__icon{
+    font-size: 1.25rem;
+}
+
+.shop__content:hover .shop__img{
+    transform: translateY(-.5rem);
+}
+
+.shop__content:hover .shop__button{
+    right: 0;
+}
 /*=============== PAGINATION ===============*/
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: .8rem;
+    margin-top: var(--mb-2-5);
+    font-size: var(--normal-font-size);
+}
 
+.pagination span{
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 36%;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
+.pagination .current{
+    background-color: var(--first--color);
+    color: #fff;
+}
+
+.paginatio__icon{
+    font-size: var(--h2-font-size);
+}
 /*=============== DETAILS PAGE ===============*/
 
 
@@ -571,7 +694,44 @@ input {
 
 /*=============== BLOG PAGE ===============*/
 
+.blog__container{
+    row-gap: 1.8rem;
+}
 
+.blog__post{
+    grtid-template-columns: .8fr 1.2fr;
+    column-grap: 2rem;
+    align-items: center;
+    background-color: var(--container-color);
+    border-radius: 1.2rem;
+    padding: 1.4rem;
+}
+
+.blog__img{
+    border-radius: .8rem;
+}
+
+.blog__details{
+    font-size: var(--small-font-size);
+    text-align: justify;
+    margin-bottom: var(--mb-0-5);
+}
+
+.blog__title{
+    font-size: var(--h3-font-fize);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-5);
+}
+
+.blog__date{
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    margin-bottom: var(--mb-0-75);
+}
+
+.read__more{
+    text-align: right;
+}
 
 
 

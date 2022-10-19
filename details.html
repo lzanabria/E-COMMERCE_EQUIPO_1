@@ -13,7 +13,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+    <link rel="stylesheet"  class="js-color-style" href="assets/css/colors/color-1.css">
 
     <title>Responsive e-commerce website - Crypticalcoder</title>
 </head>
@@ -82,8 +82,8 @@
         </div>
 
         <div class="lighbox__controls">
-            <div class="prev__item"><i class="bx bx-chevron-left"></i></div>
-            <div class="next__item"><i class="bx bx-chevron-right"></i></div>
+            <div class="prev__item" onclick="prevItem()"><i class="bx bx-chevron-left"></i></div>
+            <div class="next__item" onclick="nextItem()"><i class="bx bx-chevron-right"></i></div>
         </div>
     </div>
 
@@ -103,7 +103,50 @@
               lighboxClose = lightbox.querySelector(".lightbox__close"),
               lighboxCounter = lightbox.querySelector(".lightbox__counter");
         let itemIndex = 0;
+
+        for(let i = 0; i < totalProductItems; i++){
+            productItems[i].addEventListener("click", function(){
+                itemIndex = i;
+                changeItem();
+            })
+        }
+
+        function nextItem(){
+            if(itemIndex === totalProductItems - 1){
+                itemIndex = 0
+            }
+            else{
+                itemIndex ++
+            }
+            changeItem()
+        }
+    
+        function prevtItem(){
+            if(itemIndex === 0){
+                itemIndex = totalProductItems - 1;
+            }
+            else{
+                itemIndex --
+            }
+            changeItem()
+        }
+
+        function toggleLightbox(){
+            lightbox.classList.toggle("open")
+        }
         
+        function changeItem(){
+            imgSrc = productItems[itemIndex].querySelector(".portafolio__img img").getAttribute("src");
+            lightboxImg.src = imgSrc;
+            lighboxCounter.innerHTML = itemIndex + "of" + totalProductItems;
+        }
+
+        // Close lightbox
+        lightbox.addEventListener("click", function(){
+            if(event.target == lighboxClose || event.target === lightbox){
+                toggleLightbox()
+            }
+        })
      </script>
 
     <!--=============== SWIPER JS ===============-->

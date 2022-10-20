@@ -457,11 +457,13 @@ input {
 /*=============== LOGIN ===============*/
 .login{
     position: fixed;
-    background-color: var((--body-color));
+    background-color: var(--body-color);
     z-index: var(--z-fixed);
     width: 420px;
     box-shadow: -2px 0 4px var(--shadow);
     height: 100%;
+    top: 0;
+    right: -100%;
     padding: 3.5rem 2rem;
     transition: .4s;
 }
@@ -515,7 +517,9 @@ input {
 }
 
 /* Show login */
-
+.show-login{
+    right: 0;
+}
 
 /*=============== CART ===============*/
 .cart{

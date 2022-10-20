@@ -45,7 +45,9 @@ if(cartClose){
 /*=============== SHOW LOGIN ===============*/
 const login = document.getElementById('login'),
     loginButton = document.getElementById('login-button'),
-    loginClose = document.document.getElementById('login-close')
+    loginClose = document.getElementById('login-close')
+
+    
 
 
 /*===== LOGIN SHOW =====*/
@@ -136,6 +138,8 @@ const toggleItem = (item) =>{
 
 /*=============== STYLE SWITCHER ===============*/
 const styleSwitcherToggle = document.querySelector('.style__switcher-toggler');
+
+
 styleSwitcherToggle.addEventListener("click",()=>{
     document.querySelector(".style__switcher").classList.toggle("open");  
 })
@@ -151,16 +155,16 @@ window.addEventListener("scroll",()=>{
 function themeColors(){
     const colorStyle = document.querySelector(".js-color-style"),
         themeColorsContainer = document.querySelector(".js-theme-colors");
-    themeColorsContainer.addEventListener("click",({target}) =>{
-        if(target.classList.contains("js-theme-color-item")){
-            localStorage.setItem("color", target.getAttibute("data-js-theme-color"));
+    themeColorsContainer.addEventListener("click",(e) =>{
+        if(e.target.classList.contains("js-theme-color-item")){
+            localStorage.setItem("color", e.target.dataset.jsThemeColor);
             setColors();
         }
     })
     function setColors(){
         let path = colorStyle.getAttribute("href").split("/");
         path = path.slice(0,path.length -1);
-        colorStyle.setAttribute("href",path.join("/")+ "/" + localStorage.getItem("color") + ".css");
+        colorStyle.setAttribute("href",path.join("/")+ "/" + localStorage.getItem("color") + ".css");   
         if(document.querySelector(".js-theme-color-item.active")){
             document.querySelector(".js-theme-color-item.active").classList.remove("active");
         }
@@ -171,7 +175,7 @@ function themeColors(){
     }
     else{
         const defaultColor = colorStyle.getAttribute("href").split("/").pop().split(".").shift();
-        document.querySelector("[data-js-theme-color" + defaultColor + "]").classList.add("active");
+        document.querySelector('[data-js-theme-color="' + defaultColor + '"]').classList.add("active");
     }
 }
 

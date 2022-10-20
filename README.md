@@ -1,3 +1,22 @@
+# E-COMMERCE  JUAN DAVID MADRID CÀRCAMO
+
+
+
+en la realización del trabajo mi función fue realizar la parte de fags ("fag.html")guiándome de los videos compartidos por el instructor
+
+trabaje en la siguientes partes:
+
+-  *<!--=============== HEADER ===============-->*
+- *<!--=============== CART ===============-->*
+- *<!--=============== LOGIN ===============-->*
+- *<!--=============== MAIN ===============-->*
+- *<!--=============== FOOTER ===============-->*
+- *<!--=============== SCROLL UP ===============-->*
+-  *<!--=============== STYLE SWITCHER ===============-->*
+
+evidencia de la codificación:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +40,7 @@
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index.html" class="nav__logo"> 
+            <a href="index.html" class="nav__logo">
                 <i class="bx bxs-shopping-bags nav__logo-icon"></i> e-shopper
             </a>
 
@@ -343,3 +362,6 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+```
+
+y asi finaliza mi parte en la colaboracion de este proyecto.

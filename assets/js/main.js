@@ -1,4 +1,4 @@
-/*Trabajo de Madrid*/
+/*Trabajo de Mantilla*/
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
@@ -47,14 +47,6 @@ const login = document.getElementById('login'),
     loginButton = document.getElementById('login-button'),
     loginClose = document.document.getElementById('login-close')
 
-/*Finaliza trabajo de Madrid*/
-
-
-
-
-
-
-/*Trabajo de Mantilla*/
 
 /*===== LOGIN SHOW =====*/
 /* Validate if constant exists */

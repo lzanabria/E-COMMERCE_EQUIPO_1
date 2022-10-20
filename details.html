@@ -13,7 +13,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+    <link rel="stylesheet"  class="js-color-style" href="assets/css/colors/color-1.css">
 
     <title>Responsive e-commerce website - Crypticalcoder</title>
 </head>
@@ -37,7 +37,26 @@
     <main class="main">
         <!--=============== DETAILS ===============-->
         <section class="details section container">
-            
+          <h2 class="breadcrumb__title">Details Page</h2>
+          <h3 class="breadcrum__subtitle">Home <span>Details</span></h3>  
+
+          <div class="details__container grid">
+            <div class="product__images grid">
+                <div class="product__img">
+                    <div class="details__img-tag">New</div>
+                    <img src="assets/img/details-1.png" alt="">
+                </div>
+                <div class="product__img">
+                    <img src="assets/img/details-2.png" alt="">
+                </div>
+                <div class="product__img">
+                    <img src="assets/img/details-3.png" alt="">
+                </div>
+                <div class="product__img">
+                    <img src="assets/img/details-4.png" alt="">
+                </div>
+            </div>
+          </div>
         </section>
 
         <!--=============== RELATED PRODUCTS ===============-->
@@ -52,11 +71,84 @@
     </footer>
 
     <!--=============== LIGHTBOX ===============-->
+    <div class="lightbox">
+        <div class="lighbox__content">
+            <div class="lighbox__close">&times;</div>
+            <img src="assets/img/details-2.png" alt="" class="lighbox__img">
+            <div class="lighbox__caption">
+                <div class="caption__text">e-shooper</div>
+                <div class="caption__counter">1 of 4</div>
+            </div>
+        </div>
+
+        <div class="lighbox__controls">
+            <div class="prev__item" onclick="prevItem()"><i class="bx bx-chevron-left"></i></div>
+            <div class="next__item" onclick="nextItem()"><i class="bx bx-chevron-right"></i></div>
+        </div>
+    </div>
 
     <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scroLLip" id="scroLL-up">
+        <i class="bx bx-up-arrow-alt scroLLup__icon"></i>
+    </a>
 
     <!--=============== STYLE SWITCHER ===============-->
+
+     <!--=============== lIGHTBOX ===============-->
+     <script>
+        const productItems = document.querySelectorAll(".product__img"),
+              totalProductItems = productItems.length,
+              lightbox = document.querySelector(".lightbox"),
+              lightboxImg = lightbox.querySelector(".lightbox__img"),
+              lighboxClose = lightbox.querySelector(".lightbox__close"),
+              lighboxCounter = lightbox.querySelector(".lightbox__counter");
+        let itemIndex = 0;
+
+        for(let i = 0; i < totalProductItems; i++){
+            productItems[i].addEventListener("click", function(){
+                itemIndex = i;
+                changeItem();
+            })
+        }
+
+        function nextItem(){
+            if(itemIndex === totalProductItems - 1){
+                itemIndex = 0
+            }
+            else{
+                itemIndex ++
+            }
+            changeItem()
+        }
     
+        function prevtItem(){
+            if(itemIndex === 0){
+                itemIndex = totalProductItems - 1;
+            }
+            else{
+                itemIndex --
+            }
+            changeItem()
+        }
+
+        function toggleLightbox(){
+            lightbox.classList.toggle("open")
+        }
+        
+        function changeItem(){
+            imgSrc = productItems[itemIndex].querySelector(".portafolio__img img").getAttribute("src");
+            lightboxImg.src = imgSrc;
+            lighboxCounter.innerHTML = itemIndex + "of" + totalProductItems;
+        }
+
+        // Close lightbox
+        lightbox.addEventListener("click", function(){
+            if(event.target == lighboxClose || event.target === lightbox){
+                toggleLightbox()
+            }
+        })
+     </script>
+
     <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
